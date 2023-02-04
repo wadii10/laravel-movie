@@ -17,7 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('category',CategoryController::class);
 Route::resource('movie',MovieController::class);
+Route::get('movies',[MovieController::class,'allMovies'])->name('allMovies');
 Route::get('/movies/{cat}',[SiteController::class,'movies'])->name('site.movies');
-Route::get('/', function () {
-    return view('welcome');
-});

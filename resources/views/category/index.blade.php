@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layoutsfront.template')
+@section('category')
 <div class="container">
     @if(session()->has('message'))
     <div class="alert alert-success">
@@ -34,3 +35,4 @@
     </table>
 
 </div>
+@endsection

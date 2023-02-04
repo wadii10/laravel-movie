@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layoutsfront.template')
+@section('movieByCat')
 @forelse ($movies as $movie)
 <div class="card" style="width: 18rem;">
     <img src={{ asset('images/'.$movie->image) }} class="card-img-top" alt="...">
@@ -16,3 +17,4 @@
   @empty
   <p>No Movies</p>
   @endforelse
+  @endsection

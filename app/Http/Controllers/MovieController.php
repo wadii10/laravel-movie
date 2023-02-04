@@ -15,8 +15,16 @@ class MovieController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
         $movies = Movie::all();
-        return view('movie.index', compact('movies'));
+        return view('movie.index', compact('movies','categories'));
+    }
+
+    public function allMovies()
+    {
+        $categories = Category::all();
+        $movies = Movie::all();
+        return view('movie.allMovies', compact('movies','categories'));
     }
 
     /**
@@ -53,7 +61,7 @@ class MovieController extends Controller
             $inputs['image'] = $newfile;
         }
         Movie::create($inputs);
-
+        
         return redirect()->route('movie.index')->with('message', 'Movie created succesfully!!');
     }
 
@@ -65,7 +73,8 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        return view('movie.show', compact('movie'));
+        $categories = Category::all();
+        return view('movie.show', compact('movie','categories'));
     }
 
     /**
