@@ -18,6 +18,7 @@ class CategoryController extends Controller
         return view('category.index', compact('categories'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        $categories = Category::all();
+        return view('category.create', compact('categories'));
     }
 
     /**
@@ -64,8 +66,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        // $category = Category::find($category->id);
-        return view('category.edit', compact('category'));
+        $categories = Category::all();
+        return view('category.edit', compact('category','categories'));
     }
 
     /**

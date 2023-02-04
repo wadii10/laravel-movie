@@ -8,7 +8,6 @@
       <a href="{{ route('movie.show',$movie->id) }} " class="btn btn-primary">See trailer</a>
     </div>
   </div>
-  
   @empty
   <p>No Movies</p>
   @endforelse

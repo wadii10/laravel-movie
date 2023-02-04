@@ -42,7 +42,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="2">no catogory exist</td>
+                        <td colspan="5">no catogory exist</td>
                     </tr>
                 @endforelse
             </tbody>
